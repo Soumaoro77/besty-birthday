@@ -112,7 +112,7 @@ function startCountdown() {
         LETTRE (MACHINE À ÉCRIRE)
 ========================================== */
 
-const letter = `💖 Ma Crazy Besty 💖
+const letter = `💖 Maïmouna Samaké 💖
 
 Aujourd'hui, le monde entier semble s'arrêter pour toi.
 
