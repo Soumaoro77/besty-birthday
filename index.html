@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>👑 Happy Birthday Besty 👑</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Chargement -->
+
+<div id="loader">
+
+    <div class="loader-content">
+
+        <h1>✨ Happy Birthday ✨</h1>
+
+        <p>Préparation de la surprise...</p>
+
+        <div class="loading-bar">
+
+            <div class="loading-progress"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Fond animé -->
+
+<div id="background">
+
+    <div id="stars"></div>
+
+    <div id="particles"></div>
+
+    <div id="aurora"></div>
+
+</div>
+
+<!-- Cadeau -->
+
+<section id="giftSection">
+
+    <div id="gift">
+
+        <div class="gift-top"></div>
+
+        <div class="gift-body"></div>
+
+        <div class="gift-ribbon-v"></div>
+
+        <div class="gift-ribbon-h"></div>
+
+    </div>
+
+    <button id="openGift">
+
+        🎁 Ouvre la Surprise
+
+    </button>
+
+</section>
+
+<!-- Carte principale -->
+
+<section id="mainCard">
+
+<div class="glass">
+
+<header>
+
+<h1>🎂 Happy Birthday </h1>
+
+<h2> Crazy Besty ❤️</h2>
+
+<div class="gold-line"></div>
+
+</header>
+
+<!-- Compte à rebours -->
+
+<section id="countdownSection">
+
+<h3>⏳ Compte à rebours</h3>
+
+<div id="countdown">
+
+<div>
+
+<span id="days">00</span>
+
+<p>Jours</p>
+
+</div>
+
+<div>
+
+<span id="hours">00</span>
+
+<p>Heures</p>
+
+</div>
+
+<div>
+
+<span id="minutes">00</span>
+
+<p>Minutes</p>
+
+</div>
+
+<div>
+
+<span id="seconds">00</span>
+
+<p>Secondes</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Galerie -->
+
+<section class="gallery3d">
+
+<div class="carousel">
+    <div class="item"><img src="assets/photo1.jpg" alt="Photo 1"></div>
+
+<div class="item"><img src="assets/photo2.jpg" alt="Photo 2"></div>
+
+<div class="item"><img src="assets/photo3.jpg" alt="Photo 3"></div>
+
+<div class="item"><img src="assets/photo4.jpg" alt="Photo 4"></div>
+
+<div class="item"><img src="assets/photo5.jpg" alt="Photo 5"></div>
+
+<div class="item"><img src="assets/photo6.jpg" alt="Photo 6"></div>
+
+<div class="item"><img src="assets/photo7.jpg" alt="Photo 7"></div>
+
+<div class="item"><img src="assets/photo8.jpg" alt="Photo 8"></div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+        LETTRE
+=========================== -->
+
+<section id="letter">
+
+<h2>💌 Mots pour toi</h2>
+
+<div id="typingText"></div>
+
+</section>
+
+<!-- ===========================
+          GÂTEAU
+=========================== -->
+
+<section id="cakeSection">
+
+<div class="cake">
+
+<div class="candles">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
+<div class="layer one"></div>
+
+<div class="layer two"></div>
+
+<div class="layer three"></div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+       BOUTONS
+=========================== -->
+
+<div class="actions">
+
+<button id="replayBtn">
+
+🔄 Revoir la Surprise
+
+</button>
+
+<button id="endingBtn" style="display:none;">
+    🌟 Appuie
+</button>
+
+</div>
+
+<!-- ===========================
+       SIGNATURE
+=========================== -->
+
+<footer>
+
+<div class="signature">
+
+❤️ Avec toute mon affection ❤️
+
+<br><br>
+
+<strong>Bron</strong>
+
+</div>
+
+</footer>
+
+</div>
+
+</section>
+<!-- ===========================
+      MUSIQUE
+=========================== -->
+
+<audio id="music" preload="auto" loop>
+    <source src="assets/music.mp3" type="audio/mpeg">
+    Votre navigateur ne supporte pas l'audio.
+</audio>
+
+<!-- ===========================
+      FEUX D'ARTIFICE
+=========================== -->
+
+<canvas id="fireworks"></canvas>
+
+<!-- ===========================
+      ÉCRAN DE FIN
+=========================== -->
+
+<div id="endingScreen">
+
+    <div class="ending-content">
+
+        <h1 id="endingTitle">❤️ Happy Birthday ❤️</h1>
+
+        <p id="endingText"></p>
+
+        <button id="restartBtn">
+            🔄 Revoir toute la surprise
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+      ETOILES FLOTTANTES
+=========================== -->
+
+<div id="floatingHearts"></div>
+
+<div id="floatingStars"></div>
+
+<div id="floatingRoses"></div>
+
+<!-- ===========================
+      PARTICULES
+=========================== -->
+
+<div id="sparkles"></div>
+
+<!-- ===========================
+      SCRIPTS
+=========================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
