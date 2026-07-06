@@ -133,7 +133,7 @@ Tu es une personne précieuse.
 
 Je n'ai peut-être pas grand-chose à t'offrir aujourd'hui...
 
-Mais Inshallah....
+Mais je te promets que cela viendra.
 
 Certaines de ces paroles ne viennent peut-être pas exactement de l'endroit où elles devraient venir...
 
@@ -397,7 +397,7 @@ function showEnding(){
 
 "🌹 Joyeux Anniversaire Besty 🌹",
 
-"❤️ Bron ❤️"
+"❤️ Dougoutigui ❤️"
 
 ];
 
@@ -405,15 +405,12 @@ let i=0;
 
 function next(){
 
-    if(i >= messages.length){
+    if(i>=messages.length){
 
-    launchFinalCelebration();
+        launchFinalCelebration();
+return;
 
-    setTimeout(showFinalMessage,3000);
-
-    return;
-
-}
+    }
 
     text.innerHTML=messages[i];
 
@@ -435,7 +432,8 @@ restartBtn.addEventListener("click",()=>{
 
     location.reload();
 
-});/* ==========================================
+});
+/* ==========================================
         PARTIE 4 - EFFETS PREMIUM
 ========================================== */
 
@@ -666,139 +664,3 @@ restartBtn.addEventListener("click",()=>{
 /* ========= MESSAGE FINAL ========= */
 
 console.log("🎉 Besty Birthday Ultra Premium chargé avec succès !");
-function launchFinalCelebration(){
-
-    fadeMusic();
-
-    goldenRain();
-
-}
-function goldenRain(){
-
-    setInterval(()=>{
-
-        const star=document.createElement("div");
-
-        star.innerHTML="⭐";
-
-        star.style.position="fixed";
-        star.style.left=Math.random()*100+"vw";
-        star.style.top="-30px";
-        star.style.fontSize="20px";
-
-        document.body.appendChild(star);
-
-        let y=-30;
-
-        const fall=setInterval(()=>{
-
-            y+=5;
-
-            star.style.top=y+"px";
-
-            if(y>window.innerHeight){
-
-                clearInterval(fall);
-
-                star.remove();
-
-            }
-
-        },20);
-
-    },200);
-
-}
-function showFinalMessage(){
-
-    const text = document.getElementById("endingText");
-
-    const finalText = `
-👑 Ma Chère Besty 👑
-
-Merci d'avoir parcouru cette petite surprise.
-
-J'espère qu'elle t'aura apporté un sourire.
-
-Que cette nouvelle année t'apporte
-la santé,
-la réussite,
-le bonheur,
-et beaucoup d'amour.
-
-N'oublie jamais...
-
-Tu es une personne exceptionnelle.
-
-❤️ Joyeux Anniversaire ❤️
-
-Avec toute mon affection,
-
-Dougoutigui 🌹
-`;
-
-    text.innerHTML = "";
-
-    let i = 0;
-
-    function write(){
-
-        if(i < finalText.length){
-
-            if(finalText[i] === "\n"){
-
-                text.innerHTML += "<br>";
-
-            }else{
-
-                text.innerHTML += finalText[i];
-
-            }
-
-            i++;
-
-            setTimeout(write,40);
-
-        }
-
-    }
-
-    write();
-
-}
-function showFinalMessage(){
-
-    const text = document.getElementById("endingText");
-
-    text.style.transition = "1.5s";
-    text.style.opacity = "0";
-
-    setTimeout(()=>{
-
-        text.style.opacity = "1";
-
-        text.innerHTML = `
-        <h2 style="color:#FFD700;font-size:42px;">
-        👑 Joyeux Anniversaire 👑
-        </h2>
-
-        <p style="font-size:24px;line-height:2;">
-        💖 Ma chère Besty 💖<br><br>
-
-        Merci d'avoir pris le temps de découvrir cette surprise.<br><br>
-
-        Que cette nouvelle année t'apporte
-        beaucoup de bonheur,
-        de réussite,
-        de santé
-        et d'amour.<br><br>
-
-        🌹 Tu es une personne exceptionnelle. 🌹<br><br>
-
-        ❤️ Dougoutigui ❤️
-        </p>
-        `;
-
-    },1500);
-
-}
