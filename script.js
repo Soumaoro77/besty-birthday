@@ -129,22 +129,24 @@ de réussite,
 de paix
 et d'amour.
 
-Tu es une personne précieuse.
+Tu es une personne précieuse très pour moi.
 
 Je n'ai peut-être pas grand-chose à t'offrir aujourd'hui...
 
-Mais je te promets que cela viendra.
+Mais Inshallah.
 
 Certaines de ces paroles ne viennent peut-être pas exactement de l'endroit où elles devraient venir...
 
 Mais elles sont sincères.
 
-Chaque mot est écrit avec le cœur.
+Chaque mot a été saisi avec le cœur.
 
 Merci d'être toi.
 
-🌹 Joyeux Anniversaire 🌹
+🌹 Joyeux Anniversaire Ma besty d'amour 🌹
 
+🌹 Cœur D'or ❤️.
+    
 ❤️ Bron ❤️`;
 
 function typeLetter(){
@@ -397,7 +399,7 @@ function showEnding(){
 
 "🌹 Joyeux Anniversaire Besty 🌹",
 
-"❤️ Dougoutigui ❤️"
+"❤️ Bron ❤️"
 
 ];
 
@@ -664,3 +666,21 @@ restartBtn.addEventListener("click",()=>{
 /* ========= MESSAGE FINAL ========= */
 
 console.log("🎉 Besty Birthday Ultra Premium chargé avec succès !");
+// Positionner les 13 photos en cercle
+const carousel = document.getElementById("carousel");
+const items = carousel.querySelectorAll(".item");
+const angle = 360 / items.length;
+
+items.forEach((item, index) => {
+  item.style.transform = `rotateY(${angle * index}deg) translateZ(350px)`;
+});
+// Positionner les 6 vidéos en cercle
+const videoCarousel = document.getElementById("videoCarousel");
+const videoItems = videoCarousel.querySelectorAll(".video-item");
+const angleVideo = 360 / videoItems.length;
+
+videoItems.forEach((item, index) => {
+  item.style.transform = `rotateY(${angleVideo * index}deg) translateZ(500px)`;
+  const vid = item.querySelector("video");
+  vid.play(); // lancer automatiquement chaque vidéo
+});
