@@ -1084,10 +1084,8 @@ font-size:1.3rem;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  pointer-events: none; /* empêche les boutons play/pause */
+  pointer-events: none; /* cache les contrôles */
 }
-
-/* Animation rotation */
 @keyframes rotateVideo {
   from { transform: rotateY(0deg); }
   to { transform: rotateY(360deg); }

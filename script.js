@@ -674,13 +674,29 @@ const angle = 360 / items.length;
 items.forEach((item, index) => {
   item.style.transform = `rotateY(${angle * index}deg) translateZ(350px)`;
 });
-// Positionner les 6 vidéos en cercle
+// Positionner les vidéos en cercle
 const videoCarousel = document.getElementById("videoCarousel");
 const videoItems = videoCarousel.querySelectorAll(".video-item");
 const angleVideo = 360 / videoItems.length;
 
 videoItems.forEach((item, index) => {
   item.style.transform = `rotateY(${angleVideo * index}deg) translateZ(500px)`;
-  const vid = item.querySelector("video");
-  vid.play(); // lancer automatiquement chaque vidéo
 });
+
+// Fonction pour détecter la vidéo visible
+function updateVideos() {
+  const rotation = (Date.now() / 100) % 360; // angle actuel
+  let visibleIndex = Math.round(rotation / angleVideo) % videoItems.length;
+
+  videoItems.forEach((item, index) => {
+    const vid = item.querySelector("video");
+    if (index === visibleIndex) {
+      if (vid.paused) vid.play(); // joue seulement la vidéo visible
+    } else {
+      vid.pause(); // pause les autres
+    }
+  });
+}
+
+// Vérifier toutes les 500ms
+setInterval(updateVideos, 500);
