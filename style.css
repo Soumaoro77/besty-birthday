@@ -1051,35 +1051,31 @@ font-size:1.3rem;
   border-radius: 10px;
   overflow: hidden;
 }
-/* =========================
-      COVER FLOW PREMIUM
-========================= */
+/* ==========================
+      GALERIE VIDEO 3D
+========================== */
 
 .videoGallery3d{
-
     width:100%;
-
-    height:520px;
-
+    height:500px;
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    overflow:hidden;
-
-    margin:80px 0;
-
+    perspective:1800px;
+    margin:70px 0;
 }
 
 .video-carousel{
 
     position:relative;
 
-    width:100%;
+    width:280px;
 
-    height:450px;
+    height:500px;
+
+    transform-style:preserve-3d;
+
+    animation:rotateVideo 25s linear infinite;
 
 }
 
@@ -1087,19 +1083,25 @@ font-size:1.3rem;
 
     position:absolute;
 
-    width:220px;
+    width:240px;
 
-    height:390px;
+    height:430px;
 
-    border-radius:25px;
+    left:20px;
+
+    top:20px;
 
     overflow:hidden;
 
+    border-radius:25px;
+
+    border:3px solid rgba(255,255,255,.35);
+
+    box-shadow:
+    0 0 30px rgba(255,215,0,.4),
+    0 0 60px rgba(255,255,255,.2);
+
     background:#000;
-
-    transition:all .8s ease;
-
-    box-shadow:0 0 30px rgba(255,215,0,.35);
 
 }
 
@@ -1111,44 +1113,58 @@ font-size:1.3rem;
 
     object-fit:cover;
 
-}
-
-.video-item.active{
-
-    transform:translateX(0) scale(1.15);
-
-    z-index:100;
+    pointer-events:none;
 
 }
 
-.video-item.left{
+.video-item:nth-child(1){
 
-    transform:translateX(-260px) rotateY(40deg) scale(.85);
-
-    opacity:.75;
+transform:rotateY(0deg) translateZ(420px);
 
 }
 
-.video-item.right{
+.video-item:nth-child(2){
 
-    transform:translateX(260px) rotateY(-40deg) scale(.85);
-
-    opacity:.75;
+transform:rotateY(60deg) translateZ(420px);
 
 }
 
-.video-item.hiddenLeft{
+.video-item:nth-child(3){
 
-    transform:translateX(-520px) scale(.6);
-
-    opacity:0;
+transform:rotateY(120deg) translateZ(420px);
 
 }
 
-.video-item.hiddenRight{
+.video-item:nth-child(4){
 
-    transform:translateX(520px) scale(.6);
+transform:rotateY(180deg) translateZ(420px);
 
-    opacity:0;
+}
+
+.video-item:nth-child(5){
+
+transform:rotateY(240deg) translateZ(420px);
+
+}
+
+.video-item:nth-child(6){
+
+transform:rotateY(300deg) translateZ(420px);
+
+}
+
+@keyframes rotateVideo{
+
+from{
+
+transform:rotateY(0deg);
+
+}
+
+to{
+
+transform:rotateY(360deg);
+
+}
 
 }
