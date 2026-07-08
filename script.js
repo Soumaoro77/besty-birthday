@@ -672,7 +672,7 @@ const items = carousel.querySelectorAll(".item");
 const angle = 360 / items.length;
 
 items.forEach((item, index) => {
-  item.style.transform = `rotateY(${angle * index}deg) translateZ(350px)`;
+  item.style.transform = `rotateY(${angle * index}deg) translateZ(320px)`;
 });
 // Positionner les vidéos en cercle
 const videoCarousel = document.getElementById("videoCarousel");
@@ -680,7 +680,7 @@ const videoItems = videoCarousel.querySelectorAll(".video-item");
 const angleVideo = 360 / videoItems.length;
 
 videoItems.forEach((item, index) => {
-  item.style.transform = `rotateY(${angleVideo * index}deg) translateZ(500px)`;
+  item.style.transform = `rotateY(${angleVideo * index}deg) translateZ(450px)`;
 });
 
 // Détection mobile
