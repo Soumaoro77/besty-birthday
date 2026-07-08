@@ -738,5 +738,5 @@ function updateVideos() {
   });
 }
 
-// Vérifier toutes les 1500ms (moins lourd)
+// Vérifier toutes les 1500ms (moins lourd sur mobile)
 setInterval(updateVideos, 1500);
