@@ -683,23 +683,6 @@ videoItems.forEach((item, index) => {
   item.style.transform = `rotateY(${angleVideo * index}deg) translateZ(500px)`;
 });
 
-// Fonction pour détecter la vidéo visible
-function updateVideos() {
-  const rotation = (Date.now() / 100) % 360; // angle actuel
-  let visibleIndex = Math.round(rotation / angleVideo) % videoItems.length;
-
-  videoItems.forEach((item, index) => {
-    const vid = item.querySelector("video");
-    if (index === visibleIndex) {
-      if (vid.paused) vid.play(); // joue seulement la vidéo visible
-    } else {
-      vid.pause(); // pause les autres
-    }
-  });
-}
-
-// Vérifier toutes les 500ms
-setInterval(updateVideos, 500);
 // Détection mobile
 const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
@@ -717,7 +700,6 @@ if (isMobile) {
   rotationSpeedVideos = "70s"; // rotation plus lente
 }
 
-// Exemple d’utilisation dans ton code existant
 // Feux d’artifice
 function startFireworks() {
   let particles = [];
@@ -743,7 +725,7 @@ function updateVideos() {
   const videoCarousel = document.getElementById("videoCarousel");
   const videoItems = videoCarousel.querySelectorAll(".video-item");
   const angleVideo = 360 / videoItems.length;
-  const rotation = (Date.now() / 200) % 360;
+  const rotation = (Date.now() / 300) % 360; // rotation plus lente
   let visibleIndex = Math.round(rotation / angleVideo) % videoItems.length;
 
   videoItems.forEach((item, index) => {
@@ -755,4 +737,6 @@ function updateVideos() {
     }
   });
 }
-setInterval(updateVideos, 1000);
+
+// Vérifier toutes les 1500ms (moins lourd)
+setInterval(updateVideos, 1500);
