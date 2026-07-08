@@ -700,3 +700,59 @@ function updateVideos() {
 
 // Vérifier toutes les 500ms
 setInterval(updateVideos, 500);
+// Détection mobile
+const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+// Paramètres par défaut (PC)
+let heartInterval = 300;   // fréquence des cœurs
+let maxParticles = 80;     // particules feux d’artifice
+let rotationSpeedPhotos = "30s"; // vitesse carrousel photos
+let rotationSpeedVideos = "40s"; // vitesse carrousel vidéos
+
+// Mode mobile : allégé
+if (isMobile) {
+  heartInterval = 800;       // moins de cœurs
+  maxParticles = 30;         // moins de particules
+  rotationSpeedPhotos = "60s"; // rotation plus lente
+  rotationSpeedVideos = "70s"; // rotation plus lente
+}
+
+// Exemple d’utilisation dans ton code existant
+// Feux d’artifice
+function startFireworks() {
+  let particles = [];
+  for (let i = 0; i < maxParticles; i++) {
+    particles.push(/* ... création particule ... */);
+  }
+  // reste du code...
+}
+
+// Cœurs flottants
+setInterval(() => {
+  createHeart(); // ta fonction qui génère un cœur
+}, heartInterval);
+
+// Carrousel photos
+document.querySelector(".carousel").style.animation = `rotate ${rotationSpeedPhotos} infinite linear`;
+
+// Carrousel vidéos
+document.querySelector(".video-carousel").style.animation = `rotateVideo ${rotationSpeedVideos} infinite linear`;
+
+// Optimisation vidéos : seule la visible joue
+function updateVideos() {
+  const videoCarousel = document.getElementById("videoCarousel");
+  const videoItems = videoCarousel.querySelectorAll(".video-item");
+  const angleVideo = 360 / videoItems.length;
+  const rotation = (Date.now() / 200) % 360;
+  let visibleIndex = Math.round(rotation / angleVideo) % videoItems.length;
+
+  videoItems.forEach((item, index) => {
+    const vid = item.querySelector("video");
+    if (index === visibleIndex) {
+      if (vid.paused) vid.play();
+    } else {
+      vid.pause();
+    }
+  });
+}
+setInterval(updateVideos, 1000);
