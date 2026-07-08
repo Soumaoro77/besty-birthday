@@ -1051,42 +1051,104 @@ font-size:1.3rem;
   border-radius: 10px;
   overflow: hidden;
 }
-.videoGallery3d {
-  perspective: 1200px;
-  width: 100%;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
+/* =========================
+      COVER FLOW PREMIUM
+========================= */
+
+.videoGallery3d{
+
+    width:100%;
+
+    height:520px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    margin:80px 0;
+
 }
 
-.video-carousel {
-  position: relative;
-  width: 320px;
-  height: 240px;
-  transform-style: preserve-3d;
-  animation: rotateVideo 40s infinite linear;
+.video-carousel{
+
+    position:relative;
+
+    width:100%;
+
+    height:450px;
+
 }
 
-.video-item {
-  position: absolute;
-  width: 300px;
-  height: 220px;
-  left: 10px;
-  top: 10px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 0 25px rgba(255,255,255,0.6);
+.video-item{
+
+    position:absolute;
+
+    width:220px;
+
+    height:390px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    background:#000;
+
+    transition:all .8s ease;
+
+    box-shadow:0 0 30px rgba(255,215,0,.35);
+
 }
 
-.video-item video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  pointer-events: none; /* cache les contrôles */
+.video-item video{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
 }
-@keyframes rotateVideo {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(360deg); }
+
+.video-item.active{
+
+    transform:translateX(0) scale(1.15);
+
+    z-index:100;
+
+}
+
+.video-item.left{
+
+    transform:translateX(-260px) rotateY(40deg) scale(.85);
+
+    opacity:.75;
+
+}
+
+.video-item.right{
+
+    transform:translateX(260px) rotateY(-40deg) scale(.85);
+
+    opacity:.75;
+
+}
+
+.video-item.hiddenLeft{
+
+    transform:translateX(-520px) scale(.6);
+
+    opacity:0;
+
+}
+
+.video-item.hiddenRight{
+
+    transform:translateX(520px) scale(.6);
+
+    opacity:0;
+
 }
